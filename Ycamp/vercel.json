@@ -1,3 +1,15 @@
 {
-    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
-  }
+    "version":2,
+    "name":"ycamp",
+    "builds":[
+        {
+            "src":"./Ycamp/index.js",
+            "use":"@vercel/node"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(.*)","dest":"/"
+        }
+    ]
+}
