@@ -34,8 +34,10 @@ app.use(methodOverride('_method'));
 //     await camp.save();
 //     res.send(camp);
 // })
-app.get('/',(req,res)=>{
-    res.render('home');
+app.get('/',async(req,res)=>{
+    // res.render('home');
+    const campgrounds =await Campground.find({});
+    res.render('campgrounds/index',{campgrounds})
 
 });
 app.get('/campgrounds',async(req,res)=>{
